@@ -1,0 +1,17 @@
+.heading {
+    text-align: center;
+    &.heading--white{
+        color: $white-color;
+    }
+  .title {
+    font-size: 30px;
+    margin: 10px;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+  .solorun {
+    font-style: italic;
+    opacity: 0.6;
+    margin: 15px 0;
+  }
+}

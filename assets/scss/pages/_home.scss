@@ -1,0 +1,431 @@
+//MODAL
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100000;
+  display: none;
+  background-color: transparent;
+  &.active {
+    display: block;
+    // transition: all 0.5s;
+    animation: modalFadeIn 0.5s linear;
+  }
+  @keyframes modalFadeIn {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 900px;
+    margin: 0 auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 4px 20px rgba(0, 0, 0, 0.19);
+    .modal-header {
+      background-color: $color-009688;
+      padding: 32px 16px;
+      text-align: center;
+      .modal-close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 8px 16px;
+        font-size: 20px;
+        color: $color-fff;
+        &:hover {
+          background-color: $color-ccc;
+          cursor: pointer;
+          color: $primary-color;
+        }
+      }
+      .modal-title {
+        color: $color-fff;
+        font-weight: 400;
+        span {
+          margin-right: 15px;
+        }
+      }
+    }
+    .modal-body {
+      padding: 0 16px;
+      background-color: $color-fff;
+      .form-modal {
+        label {
+          padding: 15px 0;
+          display: block;
+        }
+        .form-control {
+          border: 1px solid $color-ccc;
+          width: 100%;
+          padding: 8px;
+          font-size: 15px;
+        }
+        .btn-submitModal {
+          width: 100%;
+          padding: 16px;
+          margin: 16px 0;
+          background-color: $color-009688;
+          color: $color-fff;
+          border: 1px solid $color-009688;
+          font-size: 15px;
+          &:hover {
+            background-color: $color-ccc;
+            color: $primary-color;
+            border-color: $color-ccc;
+            cursor: pointer;
+          }
+        }
+      }
+      .modal-help {
+        text-align: right;
+        padding: 15px 0;
+        color: $primary-color;
+        a {
+          text-decoration: underline;
+          color: $color-2196F3;
+        }
+      }
+    }
+  }
+}
+
+// the band
+#header {
+  background-color: $primary-color;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  top: 0;
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .navbar-menu {
+      display: flex;
+      li {
+        a {
+          font-weight: 600;
+          text-transform: uppercase;
+          padding: 12px 24px;
+          color: $color-fff;
+        }
+        &:hover {
+          > a {
+            color: $primary-color;
+            background-color: $color-ccc;
+          }
+          .dropdown-menu {
+            display: block;
+            transition: all 0.5s;
+          }
+        }
+        &:last-child {
+          position: relative;
+        }
+      }
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        min-width: 150px;
+        background-color: $color-fff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2),
+          0 4px 20px rgba(0, 0, 0, 0.19);
+        li {
+          a {
+            text-transform: capitalize;
+            font-weight: 500;
+            padding: 8px 16px;
+            display: block;
+            color: $primary-color;
+          }
+        }
+      }
+    }
+    .header-search {
+      .icon-search {
+        padding: 12px 24px;
+        cursor: pointer;
+        i {
+          color: $color-fff;
+        }
+        &:hover {
+          background-color: $color-f44336;
+        }
+      }
+    }
+    .collapse {
+      color: $color-fff;
+      font-size: 15px;
+      padding: 12px 24px;
+      display: none;
+    }
+  }
+}
+
+// carousel
+.carousel {
+  margin-top: 45px;
+  // position: relative;
+  // height: auto;
+  // height: 500px;
+  .slider {
+    position: relative;
+    width: 100%;
+    z-index: 2;
+    display: none;
+
+    &.active {
+      display: block;
+    }
+    .slider-img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .slider-info {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      .slider-title {
+        color: $color-fff;
+        text-transform: capitalize;
+        font-size: 24px;
+        font-weight: 400;
+        margin: 10px 0;
+      }
+      .slider-content {
+        margin: 24px 0;
+        color: $color-fff;
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+// The band
+
+.theband {
+  .theband-content {
+    text-align: justify;
+    margin: 15px 0;
+  }
+  .member-list {
+    padding-top: 32px;
+    padding-bottom: 16px;
+    .member {
+      text-align: center;
+      .member-name {
+        text-align: center;
+        padding: 15px 0;
+      }
+      .member-img {
+        border-radius: 5px;
+        width: 60%;
+        margin-bottom: 16px;
+      }
+    }
+  }
+}
+// TOURDATE
+.tourDates {
+  background-color: $primary-color;
+  .list-ticket {
+    background-color: $color-fff;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    .ticket-date {
+      padding: 8px 16px;
+      color: $color-757575;
+      border: 1px solid $color-ddd;
+      span {
+        background-color: $color-f44336;
+
+        padding: 3px 8px;
+        margin-left: 16px;
+        font-size: 16px;
+        color: $color-fff;
+      }
+      .ticket-number {
+        float: right;
+        background-color: $primary-color;
+        border-radius: 50%;
+        margin-right: 16px;
+        margin-top: -3px;
+      }
+    }
+  }
+}
+
+// CONTACT
+.contact {
+  .contact-info {
+    .list-info {
+      span {
+        width: 30px;
+      }
+      a {
+        font-size: 18px;
+        line-height: 1.6;
+      }
+    }
+    .form-contact {
+      .form-control {
+        padding: 8px;
+        font-size: 15px;
+        width: 100%;
+        line-height: 1.7;
+        border: 1px solid $color-ccc;
+      }
+    }
+  }
+}
+
+// MAP
+
+.map {
+  background: url("../img/map.jpg") no-repeat center / cover;
+  width: 100%;
+  height: 700px;
+  filter: grayscale(50%);
+  position: relative;
+}
+
+footer {
+  .social-list {
+    text-align: center;
+    span {
+      i {
+        font-size: 25px;
+        opacity: 0.5;
+      }
+      transition: all 0.5s;
+      &:hover {
+        // color: $color-f1f1f1;
+        opacity: 0.7;
+        cursor: pointer;
+      }
+    }
+  }
+  p {
+    text-align: center;
+    margin: 15px 0;
+    opacity: 0.5;
+    a {
+      text-decoration: underline;
+    }
+  }
+}
+
+// RESPONSIVE
+
+@media screen and (min-width: 1024px) {
+}
+
+@media screen and (min-width: 740px) and (max-width: 1023px) {
+}
+@media screen and (max-width: 740px) {
+  #header {
+    .navbar {
+      align-items: flex-start;
+      // overflow-y: hidden;
+      .navbar-menu {
+        
+        li {
+          &:not(&:first-child) {
+            display: none;
+          }
+          &:active {
+            .dropdown-menu{
+              display: block;
+            }
+          }
+          &:hover {
+            > a {
+              background-color: unset;
+              color: $color-fff;
+              opacity: 1;
+            }
+          }
+          
+          .dropdown-menu {
+            background-color: $primary-color;
+            position: initial;
+            padding: 2px 38px;
+            li {
+              a {
+                color: $color-fff;
+              }
+            }
+          }
+        }
+        &.show {
+          flex-direction: column;
+          flex-grow: 1;
+          li{
+            &:not(&:first-child) {
+              display: block;
+            }
+          }
+        }
+        .dropdown-menu{
+
+        }
+      }
+      .collapse {
+        display: block;
+      }
+      .header-search {
+        .icon-search {
+          display: none;
+        }
+      }
+    }
+  }
+  .theband{
+    .member-list{
+      .member{
+        .member-name{
+          font-size: 30px;
+        }
+      }
+    }
+  }
+
+  .contact{
+    .list-info{
+      margin-bottom: 16px;
+      li{
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+  .modal{
+    .modal-content{
+      padding: 0 16px;
+      min-width: 100%;
+      .modal-header{
+        .modal-close{
+          right: 16px;
+        }
+      }
+
+      .modal-body{
+        .modal-help{
+          // display: flex;
+          a{
+            display: contents;
+          }
+        }
+      }
+    }
+  }
+}

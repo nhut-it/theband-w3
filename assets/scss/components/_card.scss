@@ -1,0 +1,43 @@
+.card{
+    .card-img{
+        width: 100%;
+        display: block;
+        &:hover{
+            opacity: .5;
+        }
+    }
+    .card-body{
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 16px;
+        background-color: $color-fff;
+        .card-title{
+            padding-top: 15px;
+            padding-bottom: 15px;
+            font-weight: bold;
+        }
+        .ticket-date{
+            opacity: .6;
+            margin-bottom: 15px ;
+        }
+        .ticket-desc{
+            margin-bottom: 15px;
+        }
+    }
+    &.card-ticket{
+        padding: 0 8px;
+    }
+}
+
+@media screen and (max-width: 740px){
+    .card{
+        .card-body{
+            .card-title{
+                font-size: 30px;
+            }
+            .ticket-date,.ticket-desc{
+                font-size: 25px;
+            }
+        }
+    }
+}
