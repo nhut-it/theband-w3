@@ -183,11 +183,11 @@ a:hover {
 }
 
 @media screen and (max-width: 740px) {
-  .card .card-body .card-title {
-    font-size: 30px;
+  .card .card-body .card-title, .card .card-body .ticket-date {
+    font-size: 20px;
   }
-  .card .card-body .ticket-date, .card .card-body .ticket-desc {
-    font-size: 25px;
+  .card .card-body .ticket-desc {
+    font-size: 18px;
   }
 }
 .modal {
@@ -449,10 +449,10 @@ a:hover {
 
 .map {
   background: url("../img/map.jpg") no-repeat center/cover;
-  width: 100%;
   height: 700px;
   filter: grayscale(50%);
   position: relative;
+  padding-top: 50%;
 }
 
 footer .social-list {
@@ -515,7 +515,7 @@ footer p a {
     display: none;
   }
   .theband .member-list .member .member-name {
-    font-size: 30px;
+    font-size: 20px;
   }
   .contact .list-info {
     margin-bottom: 16px;

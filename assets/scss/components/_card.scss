@@ -32,12 +32,13 @@
 @media screen and (max-width: 740px){
     .card{
         .card-body{
-            .card-title{
-                font-size: 30px;
+            .card-title, .ticket-date{
+                font-size: 20px;
             }
-            .ticket-date,.ticket-desc{
-                font-size: 25px;
+            .ticket-desc{
+                font-size: 18px;
             }
+           
         }
     }
 }
